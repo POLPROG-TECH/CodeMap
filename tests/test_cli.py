@@ -137,6 +137,7 @@ class TestReportCommand:
         assert result.exit_code == 0
         assert (out_dir / "codemap_report.json").exists()
 
+
 class TestProgressReporting:
     """CLI commands show progress stages."""
 
