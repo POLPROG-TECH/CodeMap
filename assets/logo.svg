@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 200" fill="none">
+  <defs>
+    <linearGradient id="icon-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5" />
+      <stop offset="100%" style="stop-color:#7C3AED" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon badge -->
+  <rect x="16" y="16" width="168" height="168" rx="40" fill="url(#icon-bg)" />
+
+  <!-- Graph edges -->
+  <g stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.30" stroke-linecap="round">
+    <!-- Hub spokes -->
+    <line x1="100" y1="100" x2="100" y2="48" />
+    <line x1="100" y1="100" x2="145" y2="72" />
+    <line x1="100" y1="100" x2="145" y2="130" />
+    <line x1="100" y1="100" x2="100" y2="152" />
+    <line x1="100" y1="100" x2="55" y2="130" />
+    <line x1="100" y1="100" x2="55" y2="72" />
+    <!-- Ring segments -->
+    <line x1="100" y1="48" x2="145" y2="72" />
+    <line x1="145" y1="130" x2="100" y2="152" />
+    <line x1="55" y1="130" x2="55" y2="72" />
+    <!-- Leaf extensions -->
+    <line x1="145" y1="72" x2="165" y2="48" />
+    <line x1="55" y1="130" x2="35" y2="155" />
+  </g>
+
+  <!-- Ring nodes -->
+  <circle cx="100" cy="48" r="11" fill="#93C5FD" opacity="0.95"/>
+  <circle cx="145" cy="72" r="9" fill="#93C5FD" opacity="0.90"/>
+  <circle cx="145" cy="130" r="10" fill="#93C5FD" opacity="0.90"/>
+  <circle cx="100" cy="152" r="11" fill="#93C5FD" opacity="0.95"/>
+  <circle cx="55" cy="130" r="9" fill="#93C5FD" opacity="0.90"/>
+  <circle cx="55" cy="72" r="10" fill="#93C5FD" opacity="0.90"/>
+
+  <!-- Leaf nodes -->
+  <circle cx="165" cy="48" r="5.5" fill="#C4B5FD" opacity="0.80"/>
+  <circle cx="35" cy="155" r="5.5" fill="#C4B5FD" opacity="0.80"/>
+
+  <!-- Center hub -->
+  <circle cx="100" cy="100" r="20" fill="#ffffff" />
+  <circle cx="100" cy="100" r="13" fill="url(#icon-bg)" />
+  <circle cx="100" cy="100" r="6" fill="#ffffff" />
+
+  <!-- Wordmark -->
+  <text x="218" y="118" font-family="'Inter','Segoe UI','Roboto',sans-serif" font-size="72" font-weight="600" fill="#1E293B" letter-spacing="-2">
+    Code<tspan fill="#4F46E5" font-weight="700">Map</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="222" y="158" font-family="'Inter','Segoe UI','Roboto',sans-serif" font-size="16" font-weight="500" fill="#64748B" letter-spacing="1.5">
+    REPOSITORY ANALYSIS &amp; ARCHITECTURE MAPPING
+  </text>
+</svg>
