@@ -1,4 +1,4 @@
-"""Report generation use-case — produces human-readable summaries."""
+"""Report generation use-case - produces human-readable summaries."""
 
 from __future__ import annotations
 

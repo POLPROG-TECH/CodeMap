@@ -1,4 +1,4 @@
-"""Repository scanning use-case — discovers files and technologies."""
+"""Repository scanning use-case - discovers files and technologies."""
 
 from __future__ import annotations
 

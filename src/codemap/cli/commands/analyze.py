@@ -1,4 +1,4 @@
-"""``codemap analyze`` — build the code graph and show summary."""
+"""``codemap analyze`` - build the code graph and show summary."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ console = Console()
 def analyze(
     repo: Path = typer.Argument(Path("."), help="Path to the repository root."),
     no_git: bool = typer.Option(False, "--no-git", help="Disable git analysis."),
-    fast: bool = typer.Option(False, "--fast", help="Fast mode — skip git analysis for speed."),
+    fast: bool = typer.Option(False, "--fast", help="Fast mode - skip git analysis for speed."),
 ) -> None:
     """Analyze repository dependencies, ownership, and metrics."""
     config = CodeMapConfig(repo_path=repo.resolve(), enable_git=not no_git and not fast)

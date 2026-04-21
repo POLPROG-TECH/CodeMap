@@ -1,4 +1,4 @@
-"""``codemap graph`` — render an interactive HTML, JSON, or PDF graph."""
+"""``codemap graph`` - render an interactive HTML, JSON, or PDF graph."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ def graph(
     output: Path = typer.Option(Path("codemap_output"), "--output", "-o", help="Output directory."),
     fmt: str = typer.Option("html", "--format", "-f", help="Output format: html, json, or pdf."),
     no_git: bool = typer.Option(False, "--no-git", help="Disable git analysis."),
-    fast: bool = typer.Option(False, "--fast", help="Fast mode — skip git analysis for speed."),
+    fast: bool = typer.Option(False, "--fast", help="Fast mode - skip git analysis for speed."),
 ) -> None:
     """Generate a visual dependency graph of the repository."""
     if fmt not in SUPPORTED_FORMATS:

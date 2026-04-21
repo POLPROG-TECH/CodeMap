@@ -20,7 +20,7 @@ def print_report(report: CodeMapReport, console: Console | None = None) -> None:
     header.append(f"  Files: {report.total_files}  │  ")
     header.append(f"Edges: {report.total_edges}  │  ")
     header.append(f"Groups: {report.total_groups}  │  ")
-    header.append(f"Languages: {', '.join(report.languages) or '—'}")
+    header.append(f"Languages: {', '.join(report.languages) or '-'}")
     con.print(Panel(header, border_style="cyan"))
 
     # Hotspots

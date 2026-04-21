@@ -1,4 +1,4 @@
-"""Shared pytest fixtures — reusable mini-repositories and graph factories."""
+"""Shared pytest fixtures - reusable mini-repositories and graph factories."""
 
 from __future__ import annotations
 
@@ -53,7 +53,7 @@ def tmp_js_repo(tmp_path: Path) -> Path:
 
 @pytest.fixture()
 def tmp_empty_repo(tmp_path: Path) -> Path:
-    """An empty directory — no source files at all."""
+    """An empty directory - no source files at all."""
     return tmp_path
 
 

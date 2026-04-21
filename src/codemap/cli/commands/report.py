@@ -1,4 +1,4 @@
-"""``codemap report`` — generate terminal and JSON reports."""
+"""``codemap report`` - generate terminal and JSON reports."""
 
 from __future__ import annotations
 

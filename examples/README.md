@@ -6,7 +6,7 @@ CodeMap's analysis capabilities.
 ## Python Project (`python_project/`)
 
 A small Python application with services, models, and utilities that import
-each other — showing dependency extraction, grouping, and metrics.
+each other - showing dependency extraction, grouping, and metrics.
 
 ```bash
 codemap scan   examples/python_project

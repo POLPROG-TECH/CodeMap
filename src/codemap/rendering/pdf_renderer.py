@@ -1,4 +1,4 @@
-"""PDF report renderer using fpdf2 — produces a printable architecture report."""
+"""PDF report renderer using fpdf2 - produces a printable architecture report."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ class PdfReportRenderer:
 
     def render(self, graph: CodeGraph, output_path: Path) -> Path:
         try:
-            from fpdf import FPDF  # noqa: F401  — availability check only
+            from fpdf import FPDF  # noqa: F401  - availability check only
         except ImportError as exc:
             raise RuntimeError(
                 "PDF export requires fpdf2. Install it with: pip install fpdf2"

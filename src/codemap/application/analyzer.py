@@ -1,4 +1,4 @@
-"""Analysis use-case — builds the CodeGraph from scan results."""
+"""Analysis use-case - builds the CodeGraph from scan results."""
 
 from __future__ import annotations
 

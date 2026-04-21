@@ -23,5 +23,5 @@ class CodeMapConfig:
     grouping_mode: str = "directory"
     hotspot_churn_threshold: int = 10
     hotspot_fanin_threshold: int = 3
-    # Performance — large-project node threshold for collapsed/progressive view
+    # Performance - large-project node threshold for collapsed/progressive view
     large_graph_threshold: int = 200

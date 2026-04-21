@@ -8,7 +8,7 @@ assignees: ""
 
 ## Problem / Motivation
 
-Describe the problem or need this feature would address.
+Describe the problem or use case this feature would address. Who benefits, and why?
 
 ## Proposed Solution
 
@@ -16,8 +16,8 @@ A clear description of what you'd like to happen.
 
 ## Alternatives Considered
 
-Any alternative solutions or workarounds you've considered.
+Any alternative solutions, workarounds, or approaches you've considered.
 
 ## Additional Context
 
-Examples, mockups, or references to similar features in other tools.
+Examples, mockups, screenshots, or references to similar features in other tools.

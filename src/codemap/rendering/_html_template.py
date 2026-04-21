@@ -1,6 +1,6 @@
 """Self-contained HTML template for the CodeMap interactive graph viewer."""
 
-# ruff: noqa: E501  — HTML template lines are necessarily long
+# ruff: noqa: E501  - HTML template lines are necessarily long
 
 HTML_TEMPLATE = r"""<!DOCTYPE html>
 <html lang="en">
@@ -175,7 +175,7 @@ svg{width:100%;height:100%}
 /* Spacious mode overrides */
 .mode-spacious .node-label{font-size:11px;font-weight:500;fill:var(--text)}
 .mode-spacious .group-label{font-size:13px;font-weight:700}
-/* About footer — full-width app footer */
+/* About footer - full-width app footer */
 #app-footer{display:flex;align-items:center;justify-content:center;gap:12px;padding:6px 16px;
   background:var(--bg2);border-top:1px solid var(--border);font-size:11px;color:var(--text3);flex-shrink:0}
 #app-footer a{color:var(--accent);text-decoration:none}
@@ -282,7 +282,7 @@ svg{width:100%;height:100%}
 
 <script>
 // =====================================================================
-// I18N — translation dictionaries
+// I18N - translation dictionaries
 // =====================================================================
 const I18N = {
 en:{
@@ -327,9 +327,9 @@ en:{
   appFooter:"Built by",
   theme:"Theme",themeDark:"Dark",themeLight:"Light",themeSystem:"System",
   performance:"Performance",perfFast:"Fast",perfQuality:"Quality",
-  collapsedView:"Collapsed view — click a cluster to expand",expandCluster:"Click to expand",
+  collapsedView:"Collapsed view - click a cluster to expand",expandCluster:"Click to expand",
   collapseCluster:"Collapse",expandAll:"Expand all",collapseAll:"Collapse all",
-  largeGraph:"Large graph detected — using optimized view",
+  largeGraph:"Large graph detected - using optimized view",
   nodesVisible:"nodes visible",progressiveHint:"Click groups to expand",
 },
 pl:{
@@ -474,7 +474,7 @@ function computeActiveGraph(){
   clusterNodes=[...clMap.values()];
   activeNodes=[...fileNodes,...clusterNodes];
 
-  // Remap links — if either end is in a collapsed group, point to cluster node
+  // Remap links - if either end is in a collapsed group, point to cluster node
   const nodeIdToActive=new Map();
   allNodesData.forEach(n=>{
     if(collapsedGroups.has(n.group)){nodeIdToActive.set(n.id,"__cluster__"+n.group)}
@@ -867,7 +867,7 @@ function drawHotspotRings(){
   const sel=ringG.selectAll("circle").data(hot,d=>d.id);sel.exit().remove();
   sel.enter().append("circle").attr("class","hotspot-ring").merge(sel).attr("cx",d=>d.x).attr("cy",d=>d.y).attr("r",d=>nodeR(d)+6);
 }
-// Throttled tick for large graphs — skip expensive operations during rapid simulation
+// Throttled tick for large graphs - skip expensive operations during rapid simulation
 let tickCount=0;
 const tickSkip=IS_LARGE?3:1; // only do full DOM update every Nth tick for large graphs
 sim.on("tick",()=>{
@@ -964,7 +964,7 @@ function applyFilters(){
 }
 
 // =====================================================================
-// UI BUILDERS — called on init and on language change
+// UI BUILDERS - called on init and on language change
 // =====================================================================
 function buildUI(){
   // Translate flow speed labels

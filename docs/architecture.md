@@ -5,25 +5,25 @@ CodeMap is structured as a **layered application** with clean separation between
 ## Layer Diagram
 
 ```
-┌─────────────────────────────┐
+┌──────────────────────────────┐
 │          CLI Layer           │  Typer commands, argument parsing
-│   codemap/cli/              │  Thin — delegates to Application
-├─────────────────────────────┤
+│   codemap/cli/               │  Thin - delegates to Application
+├───────────────────────────── ┤
 │      Application Layer       │  Use-case orchestration
-│   codemap/application/      │  scan, analyze, graph, report
-├─────────────────────────────┤
+│   codemap/application/       │  scan, analyze, graph, report
+├───────────────────────────── ┤
 │        Domain Layer          │  Core graph model, metrics, protocols
-│   codemap/domain/           │  Zero external dependencies
-├──────────────┬──────────────┤
+│   codemap/domain/            │  Zero external dependencies
+├────────────── ┬──────────────┤
 │ Infrastructure│  Rendering   │  Git, filesystem,   │ JSON, HTML,
-│ codemap/     │  codemap/    │  extractors          │ terminal
-│ infrastructure│  rendering/ │                      │
-└──────────────┴──────────────┘
+│ codemap/      │  codemap/    │  extractors         │ terminal
+│ infrastructure│  rendering/  │                     │
+└────────────── ┴──────────────┘
 ```
 
 ## Domain Layer (`codemap/domain/`)
 
-The domain layer is the core — it has **no external dependencies** (only Python stdlib).
+The domain layer is the core - it has **no external dependencies** (only Python stdlib).
 
 ### Key types
 
@@ -32,7 +32,7 @@ The domain layer is the core — it has **no external dependencies** (only Pytho
 | `Node` | A file, directory, or module in the graph |
 | `Edge` | A directed dependency between two nodes |
 | `NodeGroup` | A logical cluster (directory, package) |
-| `CodeGraph` | The central aggregate — nodes, edges, groups |
+| `CodeGraph` | The central aggregate - nodes, edges, groups |
 | `NodeMetrics` | Fan-in, fan-out, centrality, churn per node |
 | `OwnershipInfo` | Contributor data attached to a node |
 | `ContributorInfo` | Individual contributor snapshot |
@@ -45,7 +45,7 @@ The domain layer is the core — it has **no external dependencies** (only Pytho
 | `OwnershipProvider` | Provides contributor data per file |
 | `GraphRenderer` | Renders a CodeGraph to an output format |
 
-All protocols use `typing.Protocol` with `runtime_checkable` for structural subtyping — implementors don't need to inherit from anything.
+All protocols use `typing.Protocol` with `runtime_checkable` for structural subtyping - implementors don't need to inherit from anything.
 
 ## Infrastructure Layer (`codemap/infrastructure/`)
 
@@ -96,12 +96,12 @@ The HTML template is separated into `_html_template.py` for maintainability. The
 
 The HTML output is structured to be extensible:
 
-- **Layout engines** are separate JS functions (`computeHierarchy`, `computeRadial`, `computeCluster`, `computeFlow`) — adding a new layout means adding one function and one toolbar button. The **Manual** layout mode stops the simulation and pins nodes via `fx`/`fy`; a `manualTick()` function updates the DOM during drag. Save/restore uses `localStorage` with per-page keys.
+- **Layout engines** are separate JS functions (`computeHierarchy`, `computeRadial`, `computeCluster`, `computeFlow`) - adding a new layout means adding one function and one toolbar button. The **Manual** layout mode stops the simulation and pins nodes via `fx`/`fy`; a `manualTick()` function updates the DOM during drag. Save/restore uses `localStorage` with per-page keys.
 - **Color modes** are handled by a single `nodeColor(d)` function dispatching on `colorMode` state.
 - **View modes** (All / Neighborhood / Impact) are applied via the `applyView()` function which sets node dimming state.
 - **Display modes** (Overview / Readable / Focus / Presentation / Spacious) control label visibility and force spacing via `modeSpacing()` and `labelCollisionR()`.
 - **Focused Node Exploration** is a first-class mode: `activateFocusedNode()` / `applyFocusedNodeView()` isolate a selected node's subgraph with sub-modes (local, deps, reverse, impact, flow).
-- **Sidebar tabs** are independent panels — new tabs can be added without affecting existing ones.
+- **Sidebar tabs** are independent panels - new tabs can be added without affecting existing ones.
 - **Minimap** provides navigation for large, spacious graphs via `buildMinimap()`.
 - **Node Notes** (`nodeNotes` Map) allow annotations on any node, with in-graph indicators and a modal editor (hidden by default, shown only on user action). Notes are stored in-memory per session.
 - **Author accordion** (`buildAuthorsTab()`) renders expandable per-contributor panels with commit counts, file lists, risk metrics, and clickable file navigation. Selecting an author dims unrelated nodes on the graph.
@@ -130,20 +130,20 @@ The HTML visualization uses a **progressive rendering** strategy for large graph
 
 When `DATA.meta.nodeCount > 200`, the visualization automatically:
 
-1. **Collapses groups** — Directory groups with >5 files become single cluster nodes
-2. **Remaps edges** — Edges between collapsed nodes are merged into cluster-level edges
-3. **Supports click-to-expand** — Clicking a cluster node expands its member files
-4. **Rebuilds the simulation** — The `rebuildGraph()` function reinitializes D3 data joins, forces, and event handlers
+1. **Collapses groups** - Directory groups with >5 files become single cluster nodes
+2. **Remaps edges** - Edges between collapsed nodes are merged into cluster-level edges
+3. **Supports click-to-expand** - Clicking a cluster node expands its member files
+4. **Rebuilds the simulation** - The `rebuildGraph()` function reinitializes D3 data joins, forces, and event handlers
 
 ### Adaptive Simulation Parameters
 
 The `simParams()` function scales force simulation parameters based on node count:
 
 | Node Count | Link Distance | Charge | Distance Max | Collision Iterations |
-|------------|--------------|--------|-------------|---------------------|
-| ≤200       | 280          | -800   | 1200        | 4                   |
-| 200–500    | 320          | -1000  | 1600        | 3                   |
-| >500       | 400          | -1200  | 2000        | 2                   |
+|------------|--------------|--------|-------------|----------------------|
+| ≤200       | 280          | -800   | 1200        | 4                    |
+| 200–500    | 320          | -1000  | 1600        | 3                    |
+| >500       | 400          | -1200  | 2000        | 2                    |
 
 ### Throttled Tick
 
@@ -152,8 +152,8 @@ On large graphs, the simulation tick handler runs expensive DOM operations (hull
 ### Performance Mode Toggle
 
 The toolbar includes a **Fast / Quality** toggle (visible only for large graphs):
-- **Fast** — collapsed clusters, stricter zoom-gated labels, throttled ticks
-- **Quality** — all clusters expanded, full label visibility
+- **Fast** - collapsed clusters, stricter zoom-gated labels, throttled ticks
+- **Quality** - all clusters expanded, full label visibility
 
 ### CLI `--fast` Flag
 

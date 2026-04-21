@@ -1,4 +1,4 @@
-"""Core domain model for CodeMap — graph nodes, edges, groups, ownership, and metrics."""
+"""Core domain model for CodeMap - graph nodes, edges, groups, ownership, and metrics."""
 
 from __future__ import annotations
 
@@ -201,7 +201,7 @@ class NodeGroup:
 
 
 # ---------------------------------------------------------------------------
-# Code graph — the central domain aggregate
+# Code graph - the central domain aggregate
 # ---------------------------------------------------------------------------
 
 

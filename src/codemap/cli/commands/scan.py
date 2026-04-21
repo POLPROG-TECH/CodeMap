@@ -1,4 +1,4 @@
-"""``codemap scan`` — discover repository files and technologies."""
+"""``codemap scan`` - discover repository files and technologies."""
 
 from __future__ import annotations
 
@@ -48,5 +48,5 @@ def scan(
     console.print(table)
     console.print(
         f"\n  [green]{result.file_count}[/green] files  │  "
-        f"Languages: {', '.join(sorted(lang.value for lang in result.languages_detected)) or '—'}\n"
+        f"Languages: {', '.join(sorted(lang.value for lang in result.languages_detected)) or '-'}\n"
     )

@@ -1,4 +1,4 @@
-"""CodeMap CLI — entry point and top-level Typer application."""
+"""CodeMap CLI - entry point and top-level Typer application."""
 
 from __future__ import annotations
 
@@ -33,7 +33,7 @@ def _callback(
         is_eager=True,
     ),
 ) -> None:
-    """CodeMap — understand your codebase at a glance."""
+    """CodeMap - understand your codebase at a glance."""
 
 
 # Register sub-commands

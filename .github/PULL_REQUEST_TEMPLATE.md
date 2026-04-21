@@ -1,32 +1,35 @@
-## Description
+## Summary
 
-Brief description of what this PR does.
+Briefly describe what this PR does and why.
+
+## Changes
+
+- ...
+- ...
 
 ## Type of Change
 
 - [ ] Bug fix (non-breaking change that fixes an issue)
 - [ ] New feature (non-breaking change that adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Refactor (no behavior change)
 - [ ] Documentation update
-- [ ] Refactoring (no functional changes)
+- [ ] Test-only change
+- [ ] Chore / CI
 
-## Changes Made
+## How Has This Been Tested?
 
-- Change 1
-- Change 2
-
-## How to Test
-
-Steps to verify this change:
-
-1. `pip install -e ".[dev]"`
-2. `pytest`
-3. (any specific commands to test the change)
+Describe the tests you ran to verify your changes (commands, scenarios, manual steps).
 
 ## Checklist
 
-- [ ] My code follows the project's architecture (domain/application/infrastructure/cli layers)
-- [ ] I have added tests that cover my changes
-- [ ] All new and existing tests pass (`pytest`)
-- [ ] I have updated documentation if needed
-- [ ] My changes produce no new linting warnings (`ruff check src/ tests/`)
+- [ ] Tests pass locally (`pytest`)
+- [ ] Lint/format pass (`ruff check` / `ruff format --check`)
+- [ ] New code is covered by tests where applicable
+- [ ] Documentation updated where relevant
+- [ ] CHANGELOG.md updated for user-visible changes (if the repo has one)
+- [ ] Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/)
+
+## Related Issues
+
+Closes #
